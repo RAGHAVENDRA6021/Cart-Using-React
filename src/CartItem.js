@@ -11,16 +11,17 @@ const CartItem=(props)=>{
        /*  const arr=[1,2,3,4]; */
         return (
             
-            <div className="cart-item" style={{border:2,margin:55}}>
+            <div className="cart-item" style={{border:2,margin:55,background:'black',padding:30}}>
                 
                 <div className="left-block">
                     <img src={image} style={styles.image} alt="Iphone"/>
                 </div>
                 <div className="right-block">
                     <div style={styles.name}>{name} </div>
-                    <div style={{color:'grey',fontSize:25}}>${price}</div>
-                    <div style={{color:'grey',fontSize:20}}> Quantity : {qty}</div>
+                    <div style={{color:'white',fontSize:25}}>${price}</div>
+                    <div style={{color:'#307fe2',fontSize:40}}> Quantity : {qty}</div>
                     <div style={styles.total}>
+
                         total : $ {total} 
                     </div>
                     <div className="cart-item-actions" style={styles.icongroup}>
@@ -40,7 +41,8 @@ const styles={
     icons :{
         height:40,
         width:40,
-        margin:5
+        margin:5,background:'#ffffff',
+        borderRadius:'50%'
     },
     icongroup:{
         flex:1,
@@ -55,12 +57,12 @@ const styles={
       },
       name:{
           fontSize:30,
-          color:'#307fe2',
+          color:'#ffffff',
           fontWeight:800
       },
       total:{
           fontSize:35,
-          color:'#373737',
+          color:'#ffffff',
           fontWeight:600    
       }
 }

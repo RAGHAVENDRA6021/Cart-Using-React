@@ -3,7 +3,7 @@ import React from 'react';
 const Navbar=(props)=>{
    
    
-        
+        const count= props.count;
     return(
         <div className="navcart" style={styles.nav}>
         <div  style={styles.name}>
@@ -11,7 +11,7 @@ const Navbar=(props)=>{
                 </div>
                 <div>
                     <img src="https://img-premium.flaticon.com/png/512/3714/premium/3714918.png?token=exp=1629286934~hmac=8ad46718cde0e6f7a9ab37d6aeac6378" style={styles.image} alt="" />
-                    <span style={styles.cnt} >3</span>
+                    <span style={styles.cnt} >{count}</span>
                 </div>
 
             </div>
@@ -26,7 +26,9 @@ const styles={
         alignItems:'center',
         padding: 20,
         background:'yellow',
-        opacity : 0.8
+        opacity : 0.8,position: '-webkit-sticky',
+        position: 'sticky',
+        top: 0
     },
     name:{
         fontSize:45,
@@ -41,7 +43,16 @@ const styles={
     cnt:{
         display:'flex',
         justifyContent:'center',
-        alignItems:'flex-end',fontSize:40,color:'#307fe2'
+        alignItems:'flex-end',
+        fontSize:40,color:'#307fe2',background:'#ffffff',
+        borderRadius:'50%',opacity:1
         
-    }
+    },
+    navbar :{
+        
+        position: '-webkit-sticky',
+    position: 'sticky',
+    top: 0
+       
+      }
 }

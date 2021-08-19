@@ -4,3 +4,18 @@
     padding: 20px;
     
 }
+.App {
+    position : relative;
+    width : auto;
+    height : auto;
+    background-color : #307fe2;
+    border : 5px solid black;
+    -webkit-transition : border 500ms ease-out;
+    -moz-transition : border 500ms ease-out;
+    -o-transition : border 500ms ease-out;
+    transition : border 500ms ease-out;
+  }
+  
+  .App:hover {
+     border : 10px solid white;   
+  }
