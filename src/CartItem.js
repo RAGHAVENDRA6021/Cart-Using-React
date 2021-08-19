@@ -1,0 +1,68 @@
+import { div } from 'prelude-ls';
+import React from 'react';
+
+const CartItem=(props)=>{
+    
+    
+   
+    
+    
+    const {name,price,qty,total,image}=props.product;
+       /*  const arr=[1,2,3,4]; */
+        return (
+            
+            <div className="cart-item" style={{border:2,margin:55}}>
+                
+                <div className="left-block">
+                    <img src={image} style={styles.image} alt="Iphone"/>
+                </div>
+                <div className="right-block">
+                    <div style={styles.name}>{name} </div>
+                    <div style={{color:'grey',fontSize:25}}>${price}</div>
+                    <div style={{color:'grey',fontSize:20}}> Quantity : {qty}</div>
+                    <div style={styles.total}>
+                        total : $ {total} 
+                    </div>
+                    <div className="cart-item-actions" style={styles.icongroup}>
+                        <img src="https://image.flaticon.com/icons/png/512/2037/2037400.png" className="cart-icons" style={styles.icons} onClick={()=> props.onIncreaseQuantity(props.product)} alt="" />
+                        <img src="https://image.flaticon.com/icons/png/512/753/753340.png" className="cart-icons" style={styles.icons}   onClick={()=>props.onDecreaseQuantity(props.product)} alt="" />
+                        <img src="https://image.flaticon.com/icons/png/512/3221/3221897.png" className="cart-icons" style={styles.icons} alt="" onClick={()=>props.onDelete(props.product)} />
+
+                    </div>
+
+                </div>
+
+            </div>
+        )
+    
+}
+const styles={
+    icons :{
+        height:40,
+        width:40,
+        margin:5
+    },
+    icongroup:{
+        flex:1,
+        marginTop:20
+
+    },
+     image:{
+        height:150,
+        width:150,
+        borderRadius:6,
+        background:'white',
+      },
+      name:{
+          fontSize:30,
+          color:'#307fe2',
+          fontWeight:800
+      },
+      total:{
+          fontSize:35,
+          color:'#373737',
+          fontWeight:600    
+      }
+}
+
+export default CartItem;
