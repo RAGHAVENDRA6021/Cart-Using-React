@@ -7,22 +7,22 @@ const CartItem=(props)=>{
    
     
     
-    const {name,price,qty,total,image}=props.product;
+    const {name,price,qty,image}=props.product;
        /*  const arr=[1,2,3,4]; */
         return (
             
-            <div className="cart-item" style={{border:2,margin:55,background:'black',padding:30}}>
+            <div className="cart-item" style={{border:2,borderRadius:6,width:'20vw',margin:20,background:'black',padding:10,display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
                 
                 <div className="left-block">
                     <img src={image} style={styles.image} alt="Iphone"/>
                 </div>
                 <div className="right-block">
                     <div style={styles.name}>{name} </div>
-                    <div style={{color:'white',fontSize:25}}>${price}</div>
+                    <div style={{color:'white',fontSize:25}}>Price : ${price}</div>
                     <div style={{color:'#307fe2',fontSize:40}}> Quantity : {qty}</div>
                     <div style={styles.total}>
 
-                        total : $ {total} 
+                        total : $ {price*qty}
                     </div>
                     <div className="cart-item-actions" style={styles.icongroup}>
                         <img src="https://image.flaticon.com/icons/png/512/2037/2037400.png" className="cart-icons" style={styles.icons} onClick={()=> props.onIncreaseQuantity(props.product)} alt="" />
@@ -50,8 +50,8 @@ const styles={
 
     },
      image:{
-        height:150,
-        width:150,
+        height:200,
+        width:200,
         borderRadius:6,
         background:'white',
       },

@@ -13,7 +13,6 @@ class App extends React.Component {
             name:'watch',
             price : 62,
             qty : 1,
-            total : 62,
             image:'./images/iphone.jpg',
             id:1
         },
@@ -21,7 +20,6 @@ class App extends React.Component {
             name:'earphones',
             price : 55,
             qty : 1,
-            total : 55,
             image:"./images/headphones.jpg",
             id:2
         },
@@ -29,9 +27,22 @@ class App extends React.Component {
             name:'Iphone',
             price : 999,
             qty : 1,
-            total : 999,
             image:"./images/shoes.jpg",
             id:3
+        },
+        {
+            name:'Laptop',
+            price :1500,
+            qty : 1,
+            image:"./images/laptop.jpg",
+            id:4
+        },
+        {
+            name:'Choclate',
+            price : 5,
+            qty : 1,
+            image:"./images/choclate.jpg",
+            id:5
         }
     ]
     }}
@@ -76,20 +87,34 @@ class App extends React.Component {
         }
         return sum;
     }
+    getCartTotal=()=>{
+        const {products}=this.state;
+        var sum=0;
+        for(var i=0;i<products.length;i++){
+            sum+=products[i].qty * products[i].price;
+        }
+        return sum;
+
+    }
     render(){
         const {products}=this.state;
     return (
          <div className = "App" >
              <Navbar  count={this.getCartCount()}/>
-        
+             <div className="total" style={{fontSize:50,color:'white',background:'grey',position: '-webkit-sticky',
+        position: 'sticky',top: 150}}>
+             TOTAL : $ {this.getCartTotal()}
+         </div>
         <div className="arrange">
-        <Cart products={products}
+        <Cart products={products} 
          onIncreaseQuantity={this.handleIncreaseQuantity} 
          onDecreaseQuantity={this.handleDecreaseQuantity} 
-         onDelete={this.handleDelete}/>
+         onDelete={this.handleDelete}
+         />
+        
      
         </div>
-        
+       
 </div >
     );
     }
