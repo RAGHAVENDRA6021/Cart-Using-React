@@ -7,7 +7,7 @@ const CartItem=(props)=>{
    
     
     
-    const {name,price,qty,image}=props.product;
+    const {name,price,qty,image}=props.product;//{name:}
        /*  const arr=[1,2,3,4]; */
         return (
             
@@ -28,7 +28,6 @@ const CartItem=(props)=>{
                         <img src="https://image.flaticon.com/icons/png/512/2037/2037400.png" className="cart-icons" style={styles.icons} onClick={()=> props.onIncreaseQuantity(props.product)} alt="" />
                         <img src="https://image.flaticon.com/icons/png/512/753/753340.png" className="cart-icons" style={styles.icons}   onClick={()=>props.onDecreaseQuantity(props.product)} alt="" />
                         <img src="https://image.flaticon.com/icons/png/512/3221/3221897.png" className="cart-icons" style={styles.icons} alt="" onClick={()=>props.onDelete(props.product)} />
-
                     </div>
 
                 </div>
