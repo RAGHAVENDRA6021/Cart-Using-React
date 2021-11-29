@@ -26,17 +26,20 @@ class CartItem extends React.Component{
     }
     decreaseQuantity =()=>{
         var x=this.state.qty;
-        if(x>1){
+        if(x>=1){
             this.setState({
                 qty:x-1,
                 total:this.state.total-this.state.price
             })
         }
+        else{
+            return;  
+        }
     }
    render(){
        const {price,name,qty,total}=this.state;
        return (
-           <div className="cart-item">
+           <div className="cart-item" style={{paddingBottom:25}}>
                <div className="left-block">
                   <img style={styles.image} src="./images/iphone.png"alt="no display"/>
                </div>
